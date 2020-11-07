@@ -3,9 +3,9 @@ Linux bash scripting for automatic update/grade
 #
 Actualização do sistema Linux, com Bash scripting.
 #
-Para executar: chmod +x actualizaçao.sh
+Para executar/To execute: chmod +x actualizaçao.sh
 #
-Depois: sudo ./actualizaçao.sh
+Depois/Then: sudo ./actualizaçao.sh
 #
-Divirtam-se...
+Divirtam-se/Enjoy...
 
