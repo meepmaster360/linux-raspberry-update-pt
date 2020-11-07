@@ -5,7 +5,7 @@ Actualização do sistema Linux, com Bash scripting.
 #
 Para executar/To execute: chmod +x actualizaçao.sh
 #
-Depois/Then: sudo ./actualizaçao.sh
+Depois/Then: ./actualizaçao.sh
 #
 Divirtam-se/Enjoy...
 
