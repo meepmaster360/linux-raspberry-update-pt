@@ -2,10 +2,23 @@
 #Script Automatizado para atualização e limpeza.
 
 #INICIO
+echo "Actualização de Sistema Linux.";sleep 1
+clear
+# Update e Upgrade do sistema
 sudo apt-get update 
 apt-get upgrade 
 sudo apt-get dist-upgrade
 echo "Update e Upgrade concluído";sleep 1
+# Opção de RPI-Upgrade, com um "if-then-read"
+echo "Deseja instalar RPI-Upgrade? (s/n)"
+read rpiup
+if [ "$rpiup" == s ]
+then
+sudo rpi-upgrade
+elif [ "$rpiup == n ]
+then
+echo "Maravilha, vamos continuar"
+fi
 echo "Iniciando a Limpeza do Sistema";sleep 1
 apt-get autoremove
 apt-get autoclean
