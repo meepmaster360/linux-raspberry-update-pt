@@ -15,7 +15,7 @@ read rpiup
 if [ "$rpiup" == s ]
 then
 sudo rpi-update
-elif [ "$rpiup == n ]
+elif [ "$rpiup" == n ]
 then
 echo "Maravilha, vamos continuar."
 fi
