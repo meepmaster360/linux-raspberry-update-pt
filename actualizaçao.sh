@@ -9,6 +9,16 @@ sudo apt-get update
 sudo apt-get upgrade 
 sudo apt-get dist-upgrade
 echo "Update e Upgrade concluído.";sleep 1
+# Opção de RPI-Upgrade, com um "if-then-read"
+echo "Deseja instalar RPI-Upgrade? (s/n)"
+read rpiup
+if [ "$rpiup" == s ]
+then
+sudo rpi-update
+elif [ "$rpiup" == n ]
+then
+echo "Maravilha, vamos continuar."
+fi
 # Iniciar limpeza de sistema
 echo "Iniciando a Limpeza do Sistema.";sleep 1
 sudo apt-get autoremove
