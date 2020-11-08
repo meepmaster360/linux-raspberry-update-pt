@@ -5,6 +5,8 @@
 echo "Actualização de Sistema Linux.";sleep 3
 clear
 # Update e Upgrade do sistema
+sudo dpkg --configure -a
+sudo apt-get install -f
 sudo apt-get update 
 sudo apt-get upgrade 
 sudo apt-get dist-upgrade
@@ -21,7 +23,7 @@ echo "Maravilha, vamos continuar."
 fi
 # Iniciar limpeza de sistema
 echo "Iniciando a Limpeza do Sistema.";sleep 1
-sudo apt-get autoremove
+sudo apt-get --purge autoremove
 sudo apt-get autoclean
 sudo apt-get clean
 echo "Limpeza concluída.";sleep 1
