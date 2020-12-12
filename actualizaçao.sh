@@ -68,7 +68,22 @@ function RPI_Upgrade () {
 
 function Essencial () {
 	# Instalação de software essencial
-
+	echo "Instalação de software essencial"
+	echo
+	echo "1) tilix
+	echo "2) vim"
+	echo "3) git"
+	echo "4) phyton"
+	echo "5) Sair!"
+	read software_essencial;
+	
+	case $software_essencial in
+		1) echo "You selected tilix";;
+		2) echo "You selected vim";;
+		3) echo "You selected phyton";;
+		4) echo "You selected c++";;
+		5) exit
+	esac
 	Menu
 }
 
