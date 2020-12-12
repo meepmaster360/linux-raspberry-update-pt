@@ -13,16 +13,16 @@ clear
 
 function Menu () {
 	clear
-	echo "*-*-*- ${GREEN}SCRIP BY MEEPMASTER{NOCOLOR} -*-*-*" 
-	echo "*-*-*- ${GREEN}UPDATE & UPGRADE{NOCOLOR} -*-*-*" 
+	echo -e "*-*-*- ${GREEN}SCRIP BY MEEPMASTER{NOCOLOR} -*-*-*" 
+	echo -e "*-*-*- ${GREEN}UPDATE & UPGRADE{NOCOLOR} -*-*-*" 
 	echo
-	echo " [1] ${GREEN}Update e Upgrade do Sistema{NOCOLOR} "
-	echo " [2] ${GREEN}RPI-Upgrade ${RED}(Só no Raspberry Raspi){NOCOLOR} "
-	echo " [3] ${GREEN}Instalação de Software Essencial{NOCOLOR} "
-	echo " [4] ${GREEN}Sair{NOCOLOR} "
+	echo -e " [1] ${GREEN}Update e Upgrade do Sistema{NOCOLOR} "
+	echo -e " [2] ${GREEN}RPI-Upgrade ${RED}(Só no Raspberry Raspi){NOCOLOR} "
+	echo -e " [3] ${GREEN}Instalação de Software Essencial{NOCOLOR} "
+	echo -e " [4] ${GREEN}Sair{NOCOLOR} "
 	echo
 
-	echo -n " ${GREEN}>>> Digite a Opção:{NOCOLOR} "
+	echo -n -e " ${GREEN}>>> Digite a Opção:{NOCOLOR} "
 	read opcao
 
 	case $opcao in
@@ -37,7 +37,7 @@ function Menu () {
 
 function Update_upgrade () {
 	# Update e Upgrade do sistema
-	echo "${GREEN}Inicio de Actualização.{NOCOLOR}"
+	echo -e "${GREEN}Inicio de Actualização.{NOCOLOR}"
 	echo
 	sudo dpkg --configure -a
 	sudo apt-get install -f
@@ -45,38 +45,38 @@ function Update_upgrade () {
 	sudo apt-get upgrade 
 	sudo apt-get dist-upgrade
 	echo
-	echo "${GREEN}Update e Upgrade concluído.{NOCOLOR}";sleep 1
+	echo -e "${GREEN}Update e Upgrade concluído.{NOCOLOR}";sleep 1
 
 	# Iniciar limpeza de sistema
-	echo "${GREEN}Iniciando a Limpeza do Sistema.{NOCOLOR}";sleep 1
+	echo -e "${GREEN}Iniciando a Limpeza do Sistema.{NOCOLOR}";sleep 1
 	echo
 	sudo apt-get --purge autoremove
 	sudo apt-get autoclean
 	sudo apt-get clean
 	echo
-	echo "${GREEN}Limpeza concluída.{NOCOLOR}";sleep 1
+	echo -e "${GREEN}Limpeza concluída.{NOCOLOR}";sleep 1
 	echo
-	echo "${GREEN}Tenha um bom dia.{NOCOLOR}"
+	echo -e "${GREEN}Tenha um bom dia.{NOCOLOR}"
 	Menu
 }
 
 function RPI_Upgrade () {
 	# Opção de RPI-Upgrade, com um "if-then-read"
-	echo "${GREEN}Deseja instalar RPI-Upgrade para Raspi? (s/n){NOCOLOR}"
+	echo -e "${GREEN}Deseja instalar RPI-Upgrade para Raspi? (s/n){NOCOLOR}"
 	read rpiup
 	if [ "$rpiup" == s ]
 		then
 		sudo rpi-update
 	elif [ "$rpiup" == n ]
 		then
-		echo "${GREEN}Maravilha, vamos continuar.{NOCOLOR}"
+		echo -e "${GREEN}Maravilha, vamos continuar.{NOCOLOR}"
 	fi
 	Menu
 }
 
 function Essencial () {
 	# Instalação de software essencial
-	echo "${GREEN}Instalação de software essencial{NOCOLOR}"
+	echo -e "${GREEN}Instalação de software essencial{NOCOLOR}"
 	echo
 	echo "1) tilix"
 	echo "2) vim"
@@ -101,7 +101,7 @@ function Essencial () {
 
 function Sair() {
 	echo
-	echo " ${GREEN}Espero que tenhas um dia 5 Estrelas{NOCOLOR} "
+	echo -e " ${GREEN}Espero que tenhas um dia 5 Estrelas{NOCOLOR} "
 	echo
 	echo
 	exit
