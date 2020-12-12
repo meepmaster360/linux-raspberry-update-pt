@@ -72,16 +72,20 @@ function Essencial () {
 	echo
 	echo "1) tilix
 	echo "2) vim"
-	echo "3) git"
-	echo "4) phyton"
+	echo "3) deluge"
+	echo "4) htop"
 	echo "5) Sair!"
 	read software_essencial;
 	
 	case $software_essencial in
-		1) echo "You selected tilix";;
-		2) echo "You selected vim";;
-		3) echo "You selected phyton";;
-		4) echo "You selected c++";;
+		1) echo "You selected tilix"
+		sudo apt install tilix;;
+		2) echo "You selected vim"
+		sudo apt install vim;;
+		3) echo "You selected deluge"
+		sudo apt install deluge;;
+		4) echo "You selected htop"
+		sudo apt install htop;;
 		5) exit
 	esac
 	Menu
