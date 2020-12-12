@@ -113,8 +113,21 @@ function memory () {
 	#MEMORY_TOTAL=
 	#MEMORY_USED=
 	echo "Memória Livre de: $MEMORY_FREE";sleep 1
+	Menu
 }
 
+function Disco_Livre () {
+	space_free=$( df -h | awk '{ print $5 }' | sort -n | tail -n 1 | sed 's/%//' )
+	case $space_free in
+		[1-5]*) echo "Plenty of disk space available";;
+		[6-7]*) echo "There could be a problem in the near future";;
+		8*) echo "Maybe we should look at clearing out old files";;
+		9*) echo "We could have a serious problem on our hands soon;;
+		*) echo "Something is not quite right here";;
+		sleep 1
+	esac
+	Menu
+}
 
 function Temperatura () {
 	# Temperatura do Processador
@@ -123,7 +136,6 @@ function Temperatura () {
 	temp_c=$((original_temp/1000))
 	echo "$(temp_c) ºC"
 	Menu
-
 }
 
 function Sair() {
