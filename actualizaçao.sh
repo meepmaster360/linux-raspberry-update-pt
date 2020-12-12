@@ -107,6 +107,15 @@ function Sistema () {
 	
 }	
 
+function memory () {
+	# Memória Livre
+	MEMORY_FREE=`free -m  | grep ^Mem | tr -s ' ' | cut -d ' ' -f 4`
+	#MEMORY_TOTAL=
+	#MEMORY_USED=
+	echo "Memória Livre de: $MEMORY_FREE";sleep 1
+}
+
+
 function Temperatura () {
 	# Temperatura do Processador
 	temp_file=/sys/class/thermal/thermal_zone0/temp
