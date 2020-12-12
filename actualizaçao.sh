@@ -73,11 +73,11 @@ function Essencial () {
 }
 
 function Sair() {
-   echo
-   echo " Espero que tenhas um dia 5 Estrelas "
-   echo
-   echo
-   exit
+	echo
+	echo " Espero que tenhas um dia 5 Estrelas "
+	echo
+	echo
+	exit
 }
 
 Menu
