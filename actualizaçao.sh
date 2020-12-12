@@ -19,7 +19,8 @@ function Menu () {
 	echo -e " [1] ${GREEN}Update e Upgrade do Sistema${NOCOLOR} "
 	echo -e " [2] ${GREEN}RPI-Upgrade ${RED}(Só no Raspberry Raspi)${NOCOLOR} "
 	echo -e " [3] ${GREEN}Instalação de Software Essencial${NOCOLOR} "
-	echo -e " [4] ${GREEN}Sair${NOCOLOR} "
+	echo -e " [4] ${GREEN}Dados do Sistema${NOCOLOR} "
+	echo -e " [0] ${GREEN}Sair${NOCOLOR} "
 	echo
 
 	echo -n -e " ${GREEN}>>> Digite a Opção:${NOCOLOR} "
@@ -29,7 +30,8 @@ function Menu () {
 	 1) Update_upgrade ;;
 	 2) RPI_Upgrade ;;
 	 3) Essencial ;;
-	 4) Sair ;;
+	 4) Sistema ;;
+	 0) Sair ;;
 	 *) "Opção Inválida." ; echo ; Menu ;;
 	esac
 }
@@ -69,7 +71,7 @@ function RPI_Upgrade () {
 		sudo rpi-update
 	elif [ "$rpiup" == n ]
 		then
-		echo -e "${GREEN}Maravilha, vamos continuar.${NOCOLOR}"
+		echo -e "${GREEN}Maravilha, vamos continuar.${NOCOLOR}";sleep 1
 	fi
 	Menu
 }
@@ -86,17 +88,33 @@ function Essencial () {
 	read software_essencial;
 	
 	case $software_essencial in
-		1) echo "You selected tilix"
+		1) echo "You selected tilix";sleep 1
 		sudo apt install tilix;;
-		2) echo "You selected vim"
+		2) echo "You selected vim";sleep 1
 		sudo apt install vim;;
-		3) echo "You selected deluge"
+		3) echo "You selected deluge";sleep 1
 		sudo apt install deluge;;
-		4) echo "You selected htop"
+		4) echo "You selected htop";sleep 1
 		sudo apt install htop;;
 		5) exit
 	esac
 	Menu
+}
+
+function Sistema () {
+	# Dados do Sistema
+	echo -e "${GREEN}Dados do Sistema${NOCOLOR}"
+	
+}	
+
+function Temperatura () {
+	# Temperatura do Processador
+	temp_file=/sys/class/thermal/thermal_zone0/temp
+	original_temp=$(cat $(temp_file))
+	temp_c=$((original_temp/1000))
+	echo "$(temp_c) ºC"
+	Menu
+
 }
 
 function Sair() {
