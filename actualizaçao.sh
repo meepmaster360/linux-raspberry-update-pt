@@ -6,25 +6,25 @@ echo "Actualização de Sistema Linux.";sleep 3
 clear
 
 function Menu () {
-clear
-echo '*-*-*- Informações Técnicas -*-*-*'       
-echo
-echo " [1] Update e Upgrade do Sistema "
-echo " [2] RPI-Upgrade (Só no Raspberry Raspi) "
-echo " [3] Instalação de Software Essencial "
-echo " [4] Sair "
-echo
+	clear
+	echo '*-*-*- Informações Técnicas -*-*-*'       
+	echo
+	echo " [1] Update e Upgrade do Sistema "
+	echo " [2] RPI-Upgrade (Só no Raspberry Raspi) "
+	echo " [3] Instalação de Software Essencial "
+	echo " [4] Sair "
+	echo
 
-echo -n " >>> Digite a Opção: "
-read opcao
+	echo -n " >>> Digite a Opção: "
+	read opcao
 
-case $opcao in
- 1) Update_upgrade ;;
- 2) RPI_Upgrade ;;
- 3) Essencial ;;
- 4) Sair ;;
- *) "Opção Inválida." ; echo ; Menu ;;
-esac
+	case $opcao in
+	 1) Update_upgrade ;;
+	 2) RPI_Upgrade ;;
+	 3) Essencial ;;
+	 4) Sair ;;
+	 *) "Opção Inválida." ; echo ; Menu ;;
+	esac
 }
 
 
