@@ -10,7 +10,7 @@ RED="\033[1;31m"
 GREEN="\033[1;32m"
 NOCOLOR="\033[0m"
 
-echo "Actualização de Sistema Linux.";sleep 3
+echo "${GREEN}Actualização de Sistema Linux ou Raspi.${NOCOLOR}";sleep 3
 
 clear
 
@@ -19,13 +19,13 @@ function Menu () {
 	echo -e "*-*-*- ${GREEN}SCRIP BY MEEPMASTER${NOCOLOR} -*-*-*" 
 	echo -e "*-*-*- ${GREEN}UPDATE & UPGRADE${NOCOLOR} -*-*-*" 
 	echo
+	sleep 1
 	echo -e " [1] ${GREEN}Update e Upgrade do Sistema${NOCOLOR} "
 	echo -e " [2] ${GREEN}RPI-Upgrade ${RED}(Só no Raspberry Raspi)${NOCOLOR} "
 	echo -e " [3] ${GREEN}Instalação de Software Essencial${NOCOLOR} "
 	echo -e " [4] ${GREEN}Dados do Sistema${NOCOLOR} "
 	echo -e " [0] ${GREEN}Sair${NOCOLOR} "
 	echo
-
 	echo -n -e " ${GREEN}>>> Digite a Opção:${NOCOLOR} "
 	read opcao
 
@@ -152,7 +152,6 @@ function Kernel () {
 		echo "kernel version: $KERNEL_VERSION_CENTOS"
 	fi
 }
-
 
 function Memory () {
 	MEMORY_FREE=`free -m  | grep ^Mem | tr -s ' ' | cut -d ' ' -f 4`	
