@@ -22,4 +22,12 @@ Depois, para executar:
 #
 #
 Divirtam-se...
+#
+PS Pacote de instalação ainda instável...
+Qualquer ajuda para aperfeiçoar este código é bem vinda e correspondida.
+#
+#
+Saudações para toada a Comunidade,
+
+Meepmaster.
 
