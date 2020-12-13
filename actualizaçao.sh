@@ -102,40 +102,33 @@ function Essencial () {
 }
 
 function Sistema () {
-	# Dados do Sistema
-	echo -e "${GREEN}Dados do Sistema${NOCOLOR}"
-	
-}	
-
-function memory () {
-	# Memória Livre
-	MEMORY_FREE=`free -m  | grep ^Mem | tr -s ' ' | cut -d ' ' -f 4`
-	#MEMORY_TOTAL=
-	#MEMORY_USED=
-	echo "Memória Livre de: $MEMORY_FREE";sleep 1
-	Menu
+        # Dados do Sistema
+        Memory
+        IP
+        Temperatura
 }
 
-function Disco_Livre () {
-	space_free=$( df -h | awk '{ print $5 }' | sort -n | tail -n 1 | sed 's/%//' )
-	case $space_free in
-		[1-5]*) echo "Plenty of disk space available";;
-		[6-7]*) echo "There could be a problem in the near future";;
-		8*) echo "Maybe we should look at clearing out old files";;
-		9*) echo "We could have a serious problem on our hands soon;;
-		*) echo "Something is not quite right here";;
-		sleep 1
-	esac
-	Menu
+function Memory () {
+        MEMORY_FREE=`free -m  | grep ^Mem | tr -s ' ' | cut -d ' ' -f 4`        
+        #MEMORY_TOTAL=
+        #MEMORY_USED=
+        echo "Verificando memoria do sistema..."
+        echo "Memoria livre: $MEMORY_FREE"     
+}
+
+function IP () {
+        IP_SISTEMA=`hostname -I`
+        echo "IP is: $IP_SISTEMA"
 }
 
 function Temperatura () {
-	# Temperatura do Processador
-	temp_file=/sys/class/thermal/thermal_zone0/temp
-	original_temp=$(cat $(temp_file))
-	temp_c=$((original_temp/1000))
-	echo "$(temp_c) ºC"
-	Menu
+        # Temperatura do Processador
+        TEMP_FILE=/sys/class/thermal/thermal_zone0/temp
+        ORIGINAL_TEMP=$(cat $TEMP_FILE)
+        TEMP_C=$((ORIGINAL_TEMP/1000))
+        TEMP_F=$(($TEMP_C * 9/5 + 32))
+        echo "$TEMP_C C"
+        echo "$TEMP_F F"
 }
 
 function Sair() {
