@@ -1,4 +1,4 @@
-# linux-raspberry-update(pt)
+# linux-raspberry-update(pt-br)
 #
 #
 Actualização do sistema Linux, Raspberry-pi com Bash scripting.
