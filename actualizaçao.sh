@@ -3,11 +3,14 @@
 # Descrição: Script Automatizado para actualização e limpeza do sistema.
 
 # INICIO
-echo "Actualização de Sistema Linux.";sleep 3
+clear
+
 # Padrão de cores para cabeçalhos
 RED="\033[1;31m"
 GREEN="\033[1;32m"
 NOCOLOR="\033[0m"
+
+echo "Actualização de Sistema Linux.";sleep 3
 
 clear
 
@@ -27,11 +30,16 @@ function Menu () {
 	read opcao
 
 	case $opcao in
-	 1) Update_upgrade ;;
-	 2) RPI_Upgrade ;;
-	 3) Essencial ;;
-	 4) Sistema ;;
-	 0) Sair ;;
+	 1) Update_upgrade 
+	;;
+	 2) RPI_Upgrade 	
+	;;
+	 3) Essencial 
+	;;
+	 4) Sistema 
+	;;
+	 0) Sair 
+	;;
 	 *) "Opção Inválida." ; echo ; Menu ;;
 	esac
 }
@@ -89,46 +97,70 @@ function Essencial () {
 	
 	case $software_essencial in
 		1) echo "You selected tilix";sleep 1
-		sudo apt install tilix;;
+		sudo apt install tilix
+		;;
 		2) echo "You selected vim";sleep 1
-		sudo apt install vim;;
+		sudo apt install vim
+		;;
 		3) echo "You selected deluge";sleep 1
-		sudo apt install deluge;;
+		sudo apt install deluge
+		;;
 		4) echo "You selected htop";sleep 1
-		sudo apt install htop;;
+		sudo apt install htop	
+		;;
 		5) exit
 	esac
+	read -n 1 -p "<Enter> Para iniciar"
 	Menu
 }
 
 function Sistema () {
         # Dados do Sistema
-        Memory
-        IP
-        Temperatura
+	echo -e "${GREEN}Dados do Sistema${NOCOLOR}"
+        echo
+        echo "1) Memória"
+        echo "2) IP"
+        echo "3) Temperatura"
+        echo "4) htop"
+        echo "5) Sair!"
+        read Dados_sistema;
+
+	case $Dados_sistema in
+	        1) Memory;
+		;;	
+		2) IP;
+		;;
+		3) Temperatura;
+		;;
+		4) IP
+		;;
+		5) exit
+	esac
+	read -n 1 -p "<Enter> Para iniciar"
+	Menu
 }
 
 function Memory () {
-        MEMORY_FREE=`free -m  | grep ^Mem | tr -s ' ' | cut -d ' ' -f 4`        
-        #MEMORY_TOTAL=
-        #MEMORY_USED=
-        echo "Verificando memoria do sistema..."
-        echo "Memoria livre: $MEMORY_FREE"     
+	MEMORY_FREE=`free -m  | grep ^Mem | tr -s ' ' | cut -d ' ' -f 4`	
+	#MEMORY_TOTAL=
+	#MEMORY_USED=
+	echo "Verificando memória do sistema..."
+	echo "Memória livre: $MEMORY_FREE"     
 }
 
 function IP () {
-        IP_SISTEMA=`hostname -I`
-        echo "IP is: $IP_SISTEMA"
+	IP_SISTEMA=`hostname -I`
+	echo "IP is: $IP_SISTEMA"
 }
 
 function Temperatura () {
-        # Temperatura do Processador
-        TEMP_FILE=/sys/class/thermal/thermal_zone0/temp
-        ORIGINAL_TEMP=$(cat $TEMP_FILE)
-        TEMP_C=$((ORIGINAL_TEMP/1000))
-        TEMP_F=$(($TEMP_C * 9/5 + 32))
-        echo "$TEMP_C C"
-        echo "$TEMP_F F"
+	# Temperatura do Processador
+	TEMP_FILE=/sys/class/thermal/thermal_zone0/temp
+	ORIGINAL_TEMP=$(cat $TEMP_FILE)
+	TEMP_C=$((ORIGINAL_TEMP/1000))
+	TEMP_F=$(($TEMP_C * 9/5 + 32))
+	echo "$TEMP_C C"
+	echo "$TEMP_F F"
 }
 
 function Sair() {
