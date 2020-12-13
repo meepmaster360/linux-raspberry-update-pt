@@ -8,7 +8,7 @@ Instalação de Essenciais.
 Dados do Sistema.
 #
 Para executar: 
-git clone https://github.com/meepmaster360/linux-raspbery-update-pt.git
+git clone https://github.com/meepmaster360/linux-raspberry-update-pt.git
 cd linux-raspberry-update-pt
 chmod +x actualizaçao.sh
 #
