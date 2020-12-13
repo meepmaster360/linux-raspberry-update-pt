@@ -51,9 +51,10 @@ function Update_upgrade () {
 	echo
 	sudo dpkg --configure -a
 	sudo apt-get install -f
-	sudo apt-get update 
-	sudo apt-get upgrade 
-	sudo apt-get dist-upgrade
+	sudo apt update --fix-missing
+	sudo apt-get upgrade -y
+	sudo apt full-upgrade -y
+	sudo apt-get dist-upgrade -y
 	echo
 	echo -e "${GREEN}Update e Upgrade concluído.${NOCOLOR}";sleep 1
 
