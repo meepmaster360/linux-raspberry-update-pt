@@ -121,7 +121,7 @@ function Sistema () {
         echo "1) Memória"
         echo "2) IP"
         echo "3) Temperatura"
-        echo "4) htop"
+        echo "4) Versão Kernel"
         echo "5) Sair!"
         read Dados_sistema;
 
@@ -132,13 +132,26 @@ function Sistema () {
 		;;
 		3) Temperatura;
 		;;
-		4) IP
+		4) Kernel
 		;;
 		5) exit
 	esac
 	read -n 1 -p "<Enter> Para iniciar"
 	Menu
 }
+
+function Kernel () {
+	#RED HAT: cat /etc/redhat-release
+	KERNEL_VERSION_UBUNTU=`uname -r`
+	KERNEL_VERSION_CENTOS=`uname -r`
+	if [ -f /etc/lsb-release ]
+		then
+		echo "kernel version: $KERNEL_VERSION_UBUNTU"
+		else
+		echo "kernel version: $KERNEL_VERSION_CENTOS"
+	fi
+}
+
 
 function Memory () {
 	MEMORY_FREE=`free -m  | grep ^Mem | tr -s ' ' | cut -d ' ' -f 4`	
