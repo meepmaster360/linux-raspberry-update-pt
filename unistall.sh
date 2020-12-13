@@ -11,8 +11,7 @@ case $input in
 	[sS][iI][mM]|[sS]) 
 		echo "Sim"
 		echo "Desinstalação completa."
-		rm -r ~/LRU
-		rm -r ~/.local/share/applications/lru.desktop
+		rm -r /home/LRU
 	;;
 	[nN][aãA][oO]|[nN])
 		echo "Não"
