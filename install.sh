@@ -1,26 +1,45 @@
-case $distros in
-        "Debian/Ubuntu")
-            echo "Downloading All Is Well Script For Debian/Ubuntu"
-            mkdir ~/AIW
-            cd ~/AIW || error "Failed to enter directory 'AIW'!"
-            wget 'https://raw.githubusercontent.com/spectrumgamer75/Bash-Scripts/master/ALL%20IS%20WELL%20(V2.0)/icon-64.png'
-            wget 'https://raw.githubusercontent.com/spectrumgamer75/Bash-Scripts/master/ALL%20IS%20WELL%20(V2.0)/aiwdebianubuntu.sh'
-            wget 'https://raw.githubusercontent.com/spectrumgamer75/Bash-Scripts/master/uninstall.sh'
-            chmod +x 'uninstall.sh'
-            chmod +x 'aiwdebianubuntu.sh'
-            echo "[Desktop Entry]
-            Name=All Is Well
-            GenericName=Update Helper and Fixer
-            Comment=ALL IS WELL is a bash script that allows users to easily update and upgrade their repositories and packages on linux, BSD, And More. It will also fix any broken packages and dependencies, if possible. Forget about typing all update/upgrade commands  manually, when ALL IS WELL!
-            Exec=$HOME/AIW/aiwdebianubuntu.sh
-            Icon=$HOME/AIW/icon-64.png
-            Terminal=true
-            StartupNotify=true
-            Type=Application
-            Categories=Utility;" > ~/.local/share/applications/aiw.desktop || error "Failed to create menu entry!"
-            clear
-            echo "Installation Complete :)"
-            break
-            ;;
- *) echo "invalid option $REPLY";;
-    esac
+#!/bin/bash
+# Autor: meepmaster
+# Descrição: Instalação automatizada do scrit Linux-Raspberry-Update-pt.
+
+# INICIO
+
+echo "Instalação automatizada do Scrit Linux-Raspberry-Update-pt"
+read -r -p "Tem a certeza, certezinha, de instalar o Script? [S/n] " input
+
+case $input in
+	[sS][iI][mM]|[sS]) 
+		echo "Download e instalação do LRU-pt"
+		mkdir ~/LRU
+		cd ~/LRU || error "Falha da entrada no 'LRU'!"
+		wget 'https://raw.githubusercontent.com/meepmaster360/linux-raspberry-update-pt/main/icon-64.png'
+		wget 'https://raw.githubusercontent.com/meepmaster360/linux-raspberry-update-pt/main/actualizacao.sh'
+		wget 'https://raw.githubusercontent.com/meepmaster360/linux-raspberry-update-pt/main/unistall.sh'
+		chmod +x 'uninstall.sh'
+		chmod +x 'actualizacao.sh'
+		echo "[Desktop Entry]
+		Name=All Is Well
+		GenericName=Update Helper and Fixer
+		Comment=LRU isa bash script that allows users to easily update and upgrade their Systems!
+		Exec=$HOME/LRU/actualizacao.sh
+		Icon=$HOME/LRU/icon-64.png
+		Terminal=true
+		StartupNotify=true
+		Type=Application
+		Categories=Utility;" > ~/.local/share/applications/aiw.desktop || error "Falha na criação de entrada para Desktop!"
+		sleep 1		
+		clear
+            	echo "Instalação completa :)"
+            	break
+	;;
+	[nN][aãA][oO]|[nN])
+                echo "Não"
+                echo "Desinstalação interrompida no último segundo de sobried>
+                sleep 3
+                exit 1
+	;;
+	*)      
+                echo "Escolha omissa, sim ou não, s ou n."
+                exit 1
+        ;;
+esac
