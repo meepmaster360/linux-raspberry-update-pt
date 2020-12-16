@@ -10,11 +10,10 @@ RED="\033[1;31m"
 GREEN="\033[1;32m"
 NOCOLOR="\033[0m"
 
-echo "Actualização de Sistema Linux.";sleep 3
-
 clear
 
 function Menu () {
+	# Função Menu Principal
 	clear
 	echo -e "*-*-*- ${GREEN}SCRIP BY MEEPMASTER${NOCOLOR} -*-*-*" 
 	echo -e "*-*-*- ${GREEN}UPDATE & UPGRADE${NOCOLOR} -*-*-*" 
@@ -91,23 +90,23 @@ function Essencial () {
 	echo
 	echo "1) tilix"
 	echo "2) vim"
-	echo "3) deluge"
+	echo "3) synaptic"
 	echo "4) htop"
 	echo "5) Sair!"
 	read software_essencial;
 	
 	case $software_essencial in
 		1) echo "You selected tilix";sleep 1
-		sudo apt install tilix
+		sudo apt install tilix -y
 		;;
 		2) echo "You selected vim";sleep 1
-		sudo apt install vim
+		sudo apt install vim -y
 		;;
-		3) echo "You selected deluge";sleep 1
-		sudo apt install deluge
+		3) echo "You selected synaptic";sleep 1
+		sudo apt install synaptic -y
 		;;
 		4) echo "You selected htop";sleep 1
-		sudo apt install htop	
+		sudo apt install htop -y	
 		;;
 		5) exit
 	esac
