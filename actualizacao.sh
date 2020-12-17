@@ -5,6 +5,10 @@
 # INICIO
 clear
 
+TITLE="Actualização de Sistema de $HOSTNAME"
+RIGHT_NOW=$(date +"%x %r %z")
+TIME_STAMP="Actualizado $RIGHT_NOW por $USER"
+
 # Padrão de cores para cabeçalhos
 RED="\033[1;31m"
 GREEN="\033[1;32m"
