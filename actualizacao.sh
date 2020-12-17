@@ -26,6 +26,8 @@ function Menu () {
 	echo -e " [2] ${GREEN}RPI-Upgrade ${RED}(Só no Raspberry Raspi)${NOCOLOR} "
 	echo -e " [3] ${GREEN}Instalação de Software Essencial${NOCOLOR} "
 	echo -e " [4] ${GREEN}Dados do Sistema${NOCOLOR} "
+	echo -e " [5] ${GREEN}Adicionar Usuário ao Sistema${NOCOLOR} "
+	echo -e " [6] ${GREEN}Remover Usuário no Sistema${NOCOLOR} "
 	echo -e " [0] ${GREEN}Sair${NOCOLOR} "
 	echo
 
@@ -40,6 +42,10 @@ function Menu () {
 	 3) Essencial 
 	;;
 	 4) Sistema 
+	;;
+	 5) Adicionar 
+	;;
+	 6) Remover
 	;;
 	 0) Sair 
 	;;
@@ -122,6 +128,23 @@ function Essencial () {
 	Menu
 }
 
+function Adicionar () {
+	clear
+	echo −n "Qual o nome do usuário a se adicionar? "
+	read nome
+	adduser nome
+	Menu
+}
+
+function Remover () {
+	clear
+	echo −n "Qual o nome do usuário a deletar? "
+	read nome
+	userdel nome
+	Menu
+}
+
+
 function Sistema () {
         # Dados do Sistema
 	echo -e "${GREEN}Dados do Sistema${NOCOLOR}"
@@ -150,8 +173,8 @@ function Sistema () {
 
 function Kernel () {
 	#RED HAT: cat /etc/redhat-release
-	KERNEL_VERSION_UBUNTU=`uname -r`
-	KERNEL_VERSION_CENTOS=`uname -r`
+	KERNEL_VERSION_UBUNTU=`uname -mrs`
+	KERNEL_VERSION_CENTOS=`uname -mrs`
 	if [ -f /etc/lsb-release ]
 		then
 		echo "kernel version: $KERNEL_VERSION_UBUNTU"
