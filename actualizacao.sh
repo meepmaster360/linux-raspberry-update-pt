@@ -5,6 +5,10 @@
 # INICIO
 clear
 
+TITLE="Actualização de Sistema de $HOSTNAME"
+RIGHT_NOW=$(date +"%x %r %z")
+TIME_STAMP="Actualizado $RIGHT_NOW por $USER"
+
 # Padrão de cores para cabeçalhos
 RED="\033[1;31m"
 GREEN="\033[1;32m"
@@ -22,6 +26,8 @@ function Menu () {
 	echo -e " [2] ${GREEN}RPI-Upgrade ${RED}(Só no Raspberry Raspi)${NOCOLOR} "
 	echo -e " [3] ${GREEN}Instalação de Software Essencial${NOCOLOR} "
 	echo -e " [4] ${GREEN}Dados do Sistema${NOCOLOR} "
+	echo -e " [5] ${GREEN}Adicionar Usuário ao Sistema${NOCOLOR} "
+	echo -e " [6] ${GREEN}Remover Usuário no Sistema${NOCOLOR} "
 	echo -e " [0] ${GREEN}Sair${NOCOLOR} "
 	echo
 
@@ -36,6 +42,10 @@ function Menu () {
 	 3) Essencial 
 	;;
 	 4) Sistema 
+	;;
+	 5) Adicionar 
+	;;
+	 6) Remover
 	;;
 	 0) Sair 
 	;;
@@ -91,8 +101,9 @@ function Essencial () {
 	echo "1) tilix"
 	echo "2) vim"
 	echo "3) synaptic"
-	echo "4) htop"
-	echo "5) Sair!"
+	echo "4) libreoffice"
+	echo "5) htop"
+	echo "6) Sair!"
 	read software_essencial;
 	
 	case $software_essencial in
@@ -105,14 +116,34 @@ function Essencial () {
 		3) echo "You selected synaptic";sleep 1
 		sudo apt install synaptic -y
 		;;
-		4) echo "You selected htop";sleep 1
+		4) echo "You selected libreoffice";sleep 1
+		sudo apt install libreoffice -y	
+		;;
+		5) echo "You selected htop";sleep 1
 		sudo apt install htop -y	
 		;;
-		5) exit
+		6) exit
 	esac
 	read -n 1 -p "<Enter> Para iniciar"
 	Menu
 }
+
+function Adicionar () {
+	clear
+	echo −n "Qual o nome do usuário a se adicionar? "
+	read nome
+	adduser nome
+	Menu
+}
+
+function Remover () {
+	clear
+	echo −n "Qual o nome do usuário a deletar? "
+	read nome
+	userdel nome
+	Menu
+}
+
 
 function Sistema () {
         # Dados do Sistema
@@ -142,8 +173,8 @@ function Sistema () {
 
 function Kernel () {
 	#RED HAT: cat /etc/redhat-release
-	KERNEL_VERSION_UBUNTU=`uname -r`
-	KERNEL_VERSION_CENTOS=`uname -r`
+	KERNEL_VERSION_UBUNTU=`uname -mrs`
+	KERNEL_VERSION_CENTOS=`uname -mrs`
 	if [ -f /etc/lsb-release ]
 		then
 		echo "kernel version: $KERNEL_VERSION_UBUNTU"
