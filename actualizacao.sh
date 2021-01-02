@@ -226,61 +226,26 @@ function Sistema () {
         # Dados do Sistema
 	echo -e "${GREEN}Dados do Sistema${NOCOLOR}"
         echo
-        echo "1) Sistema"
-		echo "2) Memória"
-        echo "3) IP"
-        echo "4) Temperatura"
-        echo "5) Versão Kernel"
-        echo "6) Sair!"
+        echo "1) Memória"
+        echo "2) IP"
+        echo "3) Temperatura"
+        echo "4) Versão Kernel"
+        echo "5) Sair!"
         read Dados_sistema;
 
 	case $Dados_sistema in
-	    1) Sistema;
-		;;
-		2) Memory;
+	    1) Memory;
 		;;	
-		3) IP;
+		2) IP;
 		;;
-		4) Temperatura;
+		3) Temperatura;
 		;;
-		5) Kernel
+		4) Kernel
 		;;
-		6) exit
+		5) exit
 	esac
 	read -n 1 -p "<Enter> Para iniciar"
 	Menu
-}
-
-function Sistema () {
-	echo
-	echo "1. Display System Information"
-    echo "2. Display Disk Space"
-    echo "3. Display Home Space Utilization"
-
-	echo -n 'Enter selection [0-3]: '
-	read -r Sel
-
-	case $Sel in
-	    0) echo "Program terminated."
-			Sair
-			;;
-    	1) echo "Hostname: $HOSTNAME"; uptime
-			;;
-    	2) df -h
-			;;
-    	3) if [ "$UID" = 0 ]; 
-			then
-        		echo "Home Space Utilization (All Users)"
-        		du -sh /home/*
-            else
-            	echo "Home Space Utilization ($USER)"
-                du -sh "$HOME"
-        	fi
-        	;;
-    	*) echo "Invalid entry." >&2
-	esac
-	sleep 3
-	Menu	
 }
 
 function Kernel () {
@@ -334,15 +299,14 @@ function Sair() {
 
 function Humano() {
 	# Rapidez de resposta...
-	echo -e "${GREEN}Teste de perfil humano, digite algo rapidamente!${NOCOLOR}"
-	if read -t 3 -s response; 
-		then
+	echo -e "${GREEN} Teste de perfil humano, digite algo rapidamente!${NOCOLOR}"
+	if read -t 3 -s response; then
 		echo    
-		echo -e "${GREEN}Maravilha, mesmo a tempo...!${NOCOLOR}"; sleep 2
+		echo -e "${GREEN} Maravilha, mesmo a tempo...!${NOCOLOR}"; sleep 2
 		echo                                 
 	else                                                                              
 		echo
-		echo -e "${GREEN}Muito Lerda, talvez um cafeinado... ou dormir!${NOCOLOR}"; sleep 3
+		echo -e "${GREEN} Muito Lerda, talvez um cafeinado... ou dormir!${NOCOLOR}"; sleep 3
 		echo 
 		Sair   
 	fi  
