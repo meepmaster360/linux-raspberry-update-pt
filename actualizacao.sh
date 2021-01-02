@@ -307,6 +307,10 @@ function Humano() {
 		echo 
 		Sair   
 	fi  
+	echo
+	echo -e "${GREEN}Agora mais a sério...!${NOCOLOR}"
+	echo -e "${GREEN}Quantas bolas tem o gato do Baltazar?${NOCOLOR}"
+	
 }
 
 # Boas Vindas
