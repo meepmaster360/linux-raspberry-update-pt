@@ -110,19 +110,19 @@ function Essencial () {
 	read software_essencial;
 	
 	case $software_essencial in
-		1) echo "You selected tilix";sleep 1
+		1) echo "Voce escolheu tilix";sleep 1
 		sudo apt install tilix -y
 		;;
-		2) echo "You selected vim";sleep 1
+		2) echo "Voce escolheu vim";sleep 1
 		sudo apt install vim -y
 		;;
-		3) echo "You selected synaptic";sleep 1
+		3) echo "Voce escolheu synaptic";sleep 1
 		sudo apt install synaptic -y
 		;;
-		4) echo "You selected deluge";sleep 1
+		4) echo "Voce escolheu deluge";sleep 1
 		sudo apt install deluge -y	
 		;;
-		5) echo "You selected htop";sleep 1
+		5) echo "Voce escolheu htop";sleep 1
 		sudo apt install htop -y	
 		;;
 		6) exit
@@ -144,19 +144,19 @@ function Util () {
 	read software_util;
 	
 	case $software_util in
-		1) echo "You selected stacer";sleep 1
+		1) echo "Voce escolheu stacer";sleep 1
 		sudo apt install stacer -y
 		;;
-		2) echo "You selected geany";sleep 1
+		2) echo "Voce escolheu geany";sleep 1
 		sudo apt install geany -y
 		;;
-		3) echo "You selected vlc";sleep 1
+		3) echo "Voce escolheu vlc";sleep 1
 		sudo apt install vlc -y
 		;;
-		4) echo "You selected guake";sleep 1
+		4) echo "Voce escolheu guake";sleep 1
 		sudo apt install guake -y	
 		;;
-		5) echo "You selected terminator";sleep 1
+		5) echo "Voce escolheu terminator";sleep 1
 		sudo apt install terminator -y	
 		;;
 		6) exit
