@@ -1,7 +1,7 @@
 #!/bin/bash
 # Autor: meepmaster
 # Descrição: Script Automatizado para actualização e limpeza do sistema.
-# Teste8
+
 # INICIO
 clear
 
