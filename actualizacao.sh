@@ -9,6 +9,7 @@ clear
 TITLE="Actualização de Sistema de $HOSTNAME"
 RIGHT_NOW=$(date +"%x %r %z")
 TIME_STAMP="Actualizado $RIGHT_NOW por $USER"
+sleep 2
 
 # Padrão de cores para cabeçalhos
 RED="\033[1;31m"
@@ -295,9 +296,9 @@ function Humano() {
 	echo -e "${GREEN}Teste de perfil humano, digite algo rapidamente!${NOCOLOR}"
 	if read -t 3 -s response; 
 		then    
-		echo -e "{GREEN}Maravilha, mesmo a tempo...!{NOCOLOR}"; sleep 2                                 
+		echo -e "${GREEN}Maravilha, mesmo a tempo...!${NOCOLOR}"; sleep 2                                 
 	else                                                                              
-		echo -e "{RED}Muito Lerda, talvez um cafeinado... ou dormir!{NOCOLOR}"; sleep 3 
+		echo -e "${RED}Muito Lerda, talvez um cafeinado... ou dormir!${NOCOLOR}"; sleep 3 
 		Sair   
 	fi  
 }
