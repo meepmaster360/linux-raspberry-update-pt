@@ -287,7 +287,7 @@ function Sair() {
 	exit
 }
 
-echo -n "${GREEN}Teste de perfil humano, digite algo rapidamente!${NOCOLOR}"
+echo -e "${GREEN}Teste de perfil humano, digite algo rapidamente!${NOCOLOR}"
 if read -t 3 -s response; 
 	then    
 		echo "Great, you made it in time!"; sleep 3                                  
@@ -295,7 +295,7 @@ if read -t 3 -s response;
 		echo "Sorry, you are too slow!"; sleep 3 
 		Sair   
 fi  
-     
+
 Menu
 
 #Espero que tenham gostado.
