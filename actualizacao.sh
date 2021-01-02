@@ -23,6 +23,7 @@ function Menu () {
 	# Função Menu Principal
 	clear
 	echo -e "*-*-*- ${GREEN}SCRIP BY MEEPMASTER${NOCOLOR} -*-*-*" 
+	echo
 	echo -e "*-*-*- ${GREEN}UPDATE & UPGRADE${NOCOLOR} -*-*-*" 
 	echo
 	echo
