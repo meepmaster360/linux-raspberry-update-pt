@@ -297,7 +297,7 @@ function Humano() {
 		then    
 		echo -e "${GREEN}Maravilha, mesmo a tempo...!${NOCOLOR}"; sleep 2                                 
 	else                                                                              
-		echo -e "${RED}Muito Lerda, talvez um cafeinado... ou dormir!${NOCOLOR}"; sleep 3 
+		echo -e "${GREEN}Muito Lerda, talvez um cafeinado... ou dormir!${NOCOLOR}"; sleep 3 
 		Sair   
 	fi  
 }
@@ -306,6 +306,10 @@ function Humano() {
 
 function Boas() {
 	echo -e "${GREEN} Bem Vindo. ${NOCOLOR}"
+	echo -e "${GREEN} Vamos iniciar o script. ${NOCOLOR}"
+	echo -e "${GREEN} Esteja Atento. ${NOCOLOR}"
+	echo -e "${GREEN} Bons upgrades na vida, Saudaçoes. ${NOCOLOR}"
+	echo
 	sleep 2
 }
 
