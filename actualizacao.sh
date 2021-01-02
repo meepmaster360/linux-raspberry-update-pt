@@ -25,6 +25,8 @@ function Menu () {
 	echo -e "*-*-*- ${GREEN}SCRIP BY MEEPMASTER${NOCOLOR} -*-*-*" 
 	echo -e "*-*-*- ${GREEN}UPDATE & UPGRADE${NOCOLOR} -*-*-*" 
 	echo
+	echo
+	echo
 	echo -e " [1] ${GREEN}Update e Upgrade do Sistema${NOCOLOR} "
 	echo -e " [2] ${GREEN}RPI-Upgrade ${RED}(Só no Raspberry Raspi)${NOCOLOR} "
 	echo -e " [3] ${GREEN}Instalação de Software Essencial${NOCOLOR} "
@@ -34,9 +36,11 @@ function Menu () {
 	echo -e " [7] ${GREEN}Remover Usuário no Sistema${NOCOLOR} "
 	echo -e " [0] ${GREEN}Sair${NOCOLOR} "
 	echo
+	echo
 
 	echo -n -e " ${GREEN}>>> Digite a Opção:${NOCOLOR} "
 	read opcao
+	echo
 
 	case $opcao in
 	1) Update_upgrade 
