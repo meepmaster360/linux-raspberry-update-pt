@@ -290,12 +290,15 @@ function Sair() {
 	echo
 	echo
 	echo -e "${GREEN}Saudaçoes, Meepmaster.${NOCOLOR}"
+	echo
+	echo
 	exit
 }
 
 # Teste de perfil humano
 
 function Humano() {
+	# Rapidez de resposta...
 	echo -e "${GREEN}Teste de perfil humano, digite algo rapidamente!${NOCOLOR}"
 	if read -t 3 -s response; 
 		then
@@ -308,7 +311,7 @@ function Humano() {
 		echo 
 		Sair   
 	fi  
-
+	# Bolas do gato
 	echo
 	echo -e "${GREEN}Agora mais a sério...!${NOCOLOR}"
 	echo
@@ -338,6 +341,7 @@ function Humano() {
 # Boas Vindas
 
 function Boas() {
+	echo
 	echo -e "${GREEN} Bem Vindo. ${NOCOLOR}"
 	echo -e "${GREEN} Vamos iniciar o script. ${NOCOLOR}"
 	echo -e "${GREEN} Esteja Atento. ${NOCOLOR}"
