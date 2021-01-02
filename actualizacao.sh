@@ -17,6 +17,8 @@ NOCOLOR="\033[0m"
 
 clear
 
+# Sequencia de funçoes para executar script
+
 function Menu () {
 	# Função Menu Principal
 	clear
@@ -287,14 +289,22 @@ function Sair() {
 	exit
 }
 
-echo -e "${GREEN}Teste de perfil humano, digite algo rapidamente!${NOCOLOR}"
-if read -t 3 -s response; 
-	then    
-		echo "Great, you made it in time!"; sleep 3                                  
+# Teste de perfil humano
+
+function Humano() {
+	echo -e "${GREEN}Teste de perfil humano, digite algo rapidamente!${NOCOLOR}"
+	if read -t 3 -s response; 
+		then    
+		echo -e "{GREEN}Maravilha, mesmo a tempo...!{NOCOLOR}"; sleep 2                                 
 	else                                                                              
-		echo "Sorry, you are too slow!"; sleep 3 
+		echo -e "{RED}Muito Lerda, talvez um cafeinado... ou dormir!{NOCOLOR}"; sleep 3 
 		Sair   
-fi  
+	fi  
+}
+
+# No Final fica a evocaçao das funçoes para executar o script
+
+Humano
 
 Menu
 
