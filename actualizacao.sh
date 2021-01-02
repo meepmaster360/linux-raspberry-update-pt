@@ -310,17 +310,21 @@ function Humano() {
 
 	echo
 	echo -e "${GREEN}Agora mais a sério...!${NOCOLOR}"
+	echo
 	echo -e "${GREEN}Quantas bolas tem o gato do Baltazar?${NOCOLOR}"
 	read bolas
 
 	if [ "$bolas" == 2 ]
 		then
 		echo -e "${GREEN}Assim, sim! Vamos continuar...${NOCOLOR}"
+		sleep 2
 	elif [ "$bolas" == 3 ]
 		then
 		echo -e "${GREEN}Muito bem, temos pessoa informada...!${NOCOLOR}"
+		sleep 2
 	else
 		echo -e "${GREEN}Azar, volta mais tarde!${NOCOLOR}"
+		sleep 3
 		Sair
 	fi
 }
