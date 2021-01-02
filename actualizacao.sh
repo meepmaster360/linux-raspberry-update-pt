@@ -262,6 +262,7 @@ function Sistema () {
 
 	case $Sel in
 	    0) echo "Program terminated."
+			Sair
 			;;
     	1) echo "Hostname: $HOSTNAME"; uptime
 			;;
@@ -277,10 +278,8 @@ function Sistema () {
         	fi
         	;;
     	*) echo "Invalid entry." >&2
-    exit 1
-esac
-
-
+	esac
+	Menu	
 }
 
 function Kernel () {
