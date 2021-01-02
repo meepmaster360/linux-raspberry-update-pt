@@ -320,11 +320,9 @@ function Humano() {
 		then
 		echo -e "${GREEN}Muito bem, temos pessoa informada...!${NOCOLOR}"
 	else
-		
+		echo -e "${GREEN}Azar, volta mais tarde!${NOCOLOR}"
+		Sair
 	fi
-
-
-	
 }
 
 # Boas Vindas
