@@ -315,6 +315,7 @@ function Boas() {
 	echo -e "${GREEN} Bem Vindo. ${NOCOLOR}"
 	echo -e "${GREEN} Vamos iniciar o script. ${NOCOLOR}"
 	echo -e "${GREEN} Esteja Atento. ${NOCOLOR}"
+	echo
 	echo -e "${GREEN} Bons upgrades na vida, Saudaçoes. ${NOCOLOR}"
 	echo
 	sleep 2
