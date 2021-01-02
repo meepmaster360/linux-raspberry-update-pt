@@ -226,26 +226,61 @@ function Sistema () {
         # Dados do Sistema
 	echo -e "${GREEN}Dados do Sistema${NOCOLOR}"
         echo
-        echo "1) Memória"
-        echo "2) IP"
-        echo "3) Temperatura"
-        echo "4) Versão Kernel"
-        echo "5) Sair!"
+        echo "1) Sistema"
+		echo "2) Memória"
+        echo "3) IP"
+        echo "4) Temperatura"
+        echo "5) Versão Kernel"
+        echo "6) Sair!"
         read Dados_sistema;
 
 	case $Dados_sistema in
-	    1) Memory;
+	    1) Sistema;
+		;;
+		2) Memory;
 		;;	
-		2) IP;
+		3) IP;
 		;;
-		3) Temperatura;
+		4) Temperatura;
 		;;
-		4) Kernel
+		5) Kernel
 		;;
-		5) exit
+		6) exit
 	esac
 	read -n 1 -p "<Enter> Para iniciar"
 	Menu
+}
+
+function Sistema () {
+	echo
+	echo "1. Display System Information"
+    echo "2. Display Disk Space"
+    echo "3. Display Home Space Utilization"
+
+	echo -n 'Enter selection [0-3]: '
+	read -r Sel
+
+	case $Sel in
+	    0) echo "Program terminated."
+			;;
+    	1) echo "Hostname: $HOSTNAME"; uptime
+			;;
+    	2) df -h
+			;;
+    	3) if [ "$UID" = 0 ]; 
+			then
+        		echo "Home Space Utilization (All Users)"
+        		du -sh /home/*
+            else
+            	echo "Home Space Utilization ($USER)"
+                du -sh "$HOME"
+        	fi
+        	;;
+    	*) echo "Invalid entry." >&2
+    exit 1
+esac
+
+
 }
 
 function Kernel () {
