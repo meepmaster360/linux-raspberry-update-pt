@@ -234,7 +234,7 @@ function Sistema () {
         read Dados_sistema;
 
 	case $Dados_sistema in
-	        1) Memory;
+	    1) Memory;
 		;;	
 		2) IP;
 		;;
@@ -349,6 +349,33 @@ function Boas() {
 	echo -e "${GREEN} Bons upgrades na vida, Saudaçoes. ${NOCOLOR}"
 	echo
 	sleep 2
+}
+
+# Conversas
+
+function Conversas() {
+	echo "Fala comigo..."
+	while :
+		do
+  		read INPUT_STRING
+  			case $INPUT_STRING in
+			ola)
+				echo "Boas, tudo tranquilo?"
+				echo "Maravilha"
+				;;
+			adeus)
+				echo "Adeus, boa viagem!"
+				break
+				;;
+			*)
+				echo "Desculpa, estou confuso"
+			;;
+			esac
+		done
+
+	echo 
+	echo "That's all folks!"
+	echo
 }
 
 # No Final fica a evocaçao das funçoes para executar o script
