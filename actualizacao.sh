@@ -294,10 +294,14 @@ function Sair() {
 function Humano() {
 	echo -e "${GREEN}Teste de perfil humano, digite algo rapidamente!${NOCOLOR}"
 	if read -t 3 -s response; 
-		then    
-		echo -e "${GREEN}Maravilha, mesmo a tempo...!${NOCOLOR}"; sleep 2                                 
+		then
+		echo    
+		echo -e "${GREEN}Maravilha, mesmo a tempo...!${NOCOLOR}"; sleep 2
+		echo                                 
 	else                                                                              
-		echo -e "${GREEN}Muito Lerda, talvez um cafeinado... ou dormir!${NOCOLOR}"; sleep 3 
+		echo
+		echo -e "${GREEN}Muito Lerda, talvez um cafeinado... ou dormir!${NOCOLOR}"; sleep 3
+		echo 
 		Sair   
 	fi  
 }
