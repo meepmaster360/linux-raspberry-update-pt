@@ -12,15 +12,15 @@ case $input in
 		echo "Sim"
 		echo "Desinstalação completa."
 		rm -r /home/LRU
-	;;
+		;;
 	[nN][aãA][oO]|[nN])
 		echo "Não"
  		echo "Desinstalação interrompida no último segundo de sobriedade..."
  		sleep 3
  		exit 1
-       ;;
+      	;;
 	*)	
 		echo "Escolha omissa, sim ou não, s ou n."
 		exit 1
-	;;
+		;;
 esac

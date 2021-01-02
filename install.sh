@@ -17,15 +17,15 @@ case $input in
 		chmod +x 'uninstall.sh'
 		chmod +x 'actualizacao.sh'
 		echo "Instalação completa :)"
-	;;
+		;;
 	[nN][aãA][oO]|[nN])
 		echo "Não"
 		echo "Instalação adiada para momento mais oportuno. ;)"
 		sleep 3
 		exit 1
-	;;
+		;;
 	*)
 		echo "Escolha omissa, sim ou não, s ou n."
 		exit 1
-	;;
+		;;
 esac

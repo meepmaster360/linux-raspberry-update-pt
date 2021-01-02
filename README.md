@@ -2,6 +2,7 @@
 #
 #
 Actualização do sistema Linux, Raspberry-pi com Bash scripting.
+Perfeito quando se inicia um novo Distribuidor Linux
 #
 Instalação de Essenciais.
 #
