@@ -9,7 +9,6 @@ clear
 TITLE="Actualização de Sistema de $HOSTNAME"
 RIGHT_NOW=$(date +"%x %r %z")
 TIME_STAMP="Actualizado $RIGHT_NOW por $USER"
-sleep 2
 
 # Padrão de cores para cabeçalhos
 RED="\033[1;31m"
@@ -303,10 +302,17 @@ function Humano() {
 	fi  
 }
 
+# Boas Vindas
+
+function Boas() {
+	echo -e "${GREEN} Bem Vindo. ${NOCOLOR}"
+	sleep 2
+}
+
 # No Final fica a evocaçao das funçoes para executar o script
 
+Boas
 Humano
-
 Menu
 
 #Espero que tenham gostado.
