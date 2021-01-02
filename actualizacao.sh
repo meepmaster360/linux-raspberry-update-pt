@@ -279,6 +279,7 @@ function Sistema () {
         	;;
     	*) echo "Invalid entry." >&2
 	esac
+	sleep 3
 	Menu	
 }
 
