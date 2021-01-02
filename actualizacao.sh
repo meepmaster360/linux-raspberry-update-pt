@@ -289,6 +289,7 @@ function Sair() {
 	echo -e " ${GREEN}Espero que tenhas um dia 5 Estrelas${NOCOLOR} "
 	echo
 	echo
+	echo -e "${GREEN}Saudaçoes, Meepmaster.${NOCOLOR}"
 	exit
 }
 
@@ -322,6 +323,11 @@ function Humano() {
 		then
 		echo -e "${GREEN}Muito bem, temos pessoa informada...!${NOCOLOR}"
 		sleep 2
+	elif [ "$bolas" == 0 ]
+		then
+		echo -e "${GREEN}O Isso soa a gata...!${NOCOLOR}"
+		sleep 2
+		Sair
 	else
 		echo -e "${GREEN}Azar, volta mais tarde!${NOCOLOR}"
 		sleep 3
