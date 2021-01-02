@@ -25,9 +25,10 @@ function Menu () {
 	echo -e " [1] ${GREEN}Update e Upgrade do Sistema${NOCOLOR} "
 	echo -e " [2] ${GREEN}RPI-Upgrade ${RED}(Só no Raspberry Raspi)${NOCOLOR} "
 	echo -e " [3] ${GREEN}Instalação de Software Essencial${NOCOLOR} "
-	echo -e " [4] ${GREEN}Dados do Sistema${NOCOLOR} "
-	echo -e " [5] ${GREEN}Adicionar Usuário ao Sistema${NOCOLOR} "
-	echo -e " [6] ${GREEN}Remover Usuário no Sistema${NOCOLOR} "
+	echo -e " [4] ${GREEN}Instalação de Software Útil${NOCOLOR} "
+	echo -e " [5] ${GREEN}Dados do Sistema${NOCOLOR} "
+	echo -e " [6] ${GREEN}Adicionar Usuário ao Sistema${NOCOLOR} "
+	echo -e " [7] ${GREEN}Remover Usuário no Sistema${NOCOLOR} "
 	echo -e " [0] ${GREEN}Sair${NOCOLOR} "
 	echo
 
@@ -35,21 +36,23 @@ function Menu () {
 	read opcao
 
 	case $opcao in
-	 1) Update_upgrade 
+	1) Update_upgrade 
 	;;
-	 2) RPI_Upgrade 	
+	2) RPI_Upgrade 	
 	;;
-	 3) Essencial 
+	3) Essencial 
 	;;
-	 4) Sistema 
+	4) Util
 	;;
-	 5) Adicionar 
+	5) Sistema 
 	;;
-	 6) Remover
+	6) Adicionar 
 	;;
-	 0) Sair 
+	7) Remover
 	;;
-	 *) "Opção Inválida." ; echo ; Menu ;;
+	0) Sair 
+	;;
+	*) "Opção Inválida." ; echo ; Menu ;;
 	esac
 }
 
@@ -127,6 +130,42 @@ function Essencial () {
 	read -n 1 -p "<Enter> Para iniciar"
 	Menu
 }
+
+function Util () {
+	# Instalação de software útil
+	echo -e "${GREEN}Instalação de software útil${NOCOLOR}"
+	echo
+	echo "1) stacer"
+	echo "2) geany"
+	echo "3) vlc"
+	echo "4) guake"
+	echo "5) terminator"
+	echo "6) Sair!"
+	read software_util;
+	
+	case $software_util in
+		1) echo "You selected stacer";sleep 1
+		sudo apt install stacer -y
+		;;
+		2) echo "You selected geany";sleep 1
+		sudo apt install geany -y
+		;;
+		3) echo "You selected vlc";sleep 1
+		sudo apt install vlc -y
+		;;
+		4) echo "You selected guake";sleep 1
+		sudo apt install guake -y	
+		;;
+		5) echo "You selected terminator";sleep 1
+		sudo apt install terminator -y	
+		;;
+		6) exit
+	esac
+	read -n 1 -p "<Enter> Para iniciar"
+	Menu
+}
+
+
 
 function Adicionar () {
 	clear
