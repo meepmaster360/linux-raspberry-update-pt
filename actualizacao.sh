@@ -101,7 +101,7 @@ function Essencial () {
 	echo "1) tilix"
 	echo "2) vim"
 	echo "3) synaptic"
-	echo "4) libreoffice"
+	echo "4) deluge"
 	echo "5) htop"
 	echo "6) Sair!"
 	read software_essencial;
@@ -116,8 +116,8 @@ function Essencial () {
 		3) echo "You selected synaptic";sleep 1
 		sudo apt install synaptic -y
 		;;
-		4) echo "You selected libreoffice";sleep 1
-		sudo apt install libreoffice -y	
+		4) echo "You selected deluge";sleep 1
+		sudo apt install deluge -y	
 		;;
 		5) echo "You selected htop";sleep 1
 		sudo apt install htop -y	
