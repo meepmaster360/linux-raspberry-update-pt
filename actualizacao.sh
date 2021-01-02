@@ -146,7 +146,9 @@ function Util () {
 	echo "9) gimp"
 	echo "10) clementine"
 	echo "11) libreoffice"
-	echo "12) Sair!"
+	echo "12) shutter"
+	echo "13) liferea"
+	echo "14) Sair!"
 	read software_util;
 	
 	case $software_util in
@@ -183,7 +185,13 @@ function Util () {
 		11) echo "Voce escolheu libreoffice";sleep 1
 		sudo apt install libreoffice -y	
 		;;
-		12) exit
+		12) echo "Voce escolheu shutter";sleep 1
+		sudo apt install shutter -y	
+		;;
+		13) echo "Voce escolheu liferea";sleep 1
+		sudo apt install liferea -y	
+		;;
+		14) exit
 	esac
 	read -n 1 -p "<Enter> Para iniciar"
 	Menu
