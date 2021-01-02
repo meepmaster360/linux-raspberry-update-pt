@@ -140,7 +140,13 @@ function Util () {
 	echo "3) vlc"
 	echo "4) guake"
 	echo "5) terminator"
-	echo "6) Sair!"
+	echo "6) emacs"
+	echo "7) uget"
+	echo "8) thunderbird"
+	echo "9) gimp"
+	echo "10) clementine"
+	echo "11) libreoffice"
+	echo "12) Sair!"
 	read software_util;
 	
 	case $software_util in
@@ -159,7 +165,25 @@ function Util () {
 		5) echo "Voce escolheu terminator";sleep 1
 		sudo apt install terminator -y	
 		;;
-		6) exit
+		6) echo "Voce escolheu emacs";sleep 1
+		sudo apt install emacs25 -y	
+		;;
+		7) echo "Voce escolheu uGet";sleep 1
+		sudo apt install uget -y	
+		;;
+		8) echo "Voce escolheu thunderbird";sleep 1
+		sudo apt install thunderbird -y	
+		;;
+		9) echo "Voce escolheu gimp";sleep 1
+		sudo apt install gimp -y	
+		;;
+		10) echo "Voce escolheu clementine";sleep 1
+		sudo apt install clementine -y	
+		;;
+		11) echo "Voce escolheu libreoffice";sleep 1
+		sudo apt install libreoffice -y	
+		;;
+		12) exit
 	esac
 	read -n 1 -p "<Enter> Para iniciar"
 	Menu
