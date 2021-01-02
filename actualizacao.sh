@@ -2,6 +2,35 @@
 # Autor: meepmaster
 # Descrição: Script Automatizado para actualização e limpeza do sistema.
 
+echo "Starting to run the script..."
+# VARIABLE ASSIGNMENT
+# Show hostname:
+HOST=$(hostname)
+# User executing the script:
+CURRENTUSER=$(whoami)
+# Current date:
+CURRENTDATE=$(date +%F)
+# Host IP address:
+IPADDRESS=$(hostname -I | cut -d ' ' -f1)
+
+# SHOW MESSAGES
+echo "Today is $CURRENTDATE"
+echo "Hostname: $HOST ($IPADDRESS)"
+echo "User info for $CURRENTUSER:"
+grep $CURRENTUSER /etc/passwd
+
+
+# Teste de perfil humano
+
+echo -n "Teste de perfil humano, digite algo rapidamente! > "
+if read -t 3 -s response; 
+	then    
+		echo "Great, you made it in time!"                                  
+	else                                                                              
+		echo "Sorry, you are too slow!"                                     
+fi                                                                      
+                     
+
 # INICIO
 clear
 
