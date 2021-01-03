@@ -306,7 +306,7 @@ function Humano() {
 	echo -e "${GREEN} Teste de perfil humano, digite algo rapidamente!${NOCOLOR}"
 	echo 
 	read -t 3 -s veloz
-	if ["$veloz" == true]
+	if ["$veloz" = true]
 		then
 			echo    
 			echo -e "${GREEN} Maravilha, mesmo a tempo...!${NOCOLOR}"; sleep 2
