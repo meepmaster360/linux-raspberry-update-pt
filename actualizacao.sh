@@ -305,7 +305,7 @@ function Humano() {
 	# Rapidez de resposta...
 	echo -e "${GREEN} Teste de perfil humano, digite algo rapidamente!${NOCOLOR}"
 	echo 
-	if read -t 3 -s veloz; sleep 1
+	if read -t 3 -s veloz
 		then
 			echo    
 			echo -e "${GREEN} Maravilha, mesmo a tempo...!${NOCOLOR}"; sleep 2
@@ -386,7 +386,6 @@ function Conversas() {
 # No Final fica a evocaçao das funçoes para executar o script
 
 Boas
-Humano
 Menu
 
 #Espero que tenham gostado.
