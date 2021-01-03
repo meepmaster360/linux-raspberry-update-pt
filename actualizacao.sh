@@ -313,26 +313,26 @@ function Humano() {
 	fi  
 	# Bolas do gato
 	echo
-	echo -e "${GREEN}Agora mais a sério...!${NOCOLOR}"
+	echo -e "${GREEN} Agora mais a sério...!${NOCOLOR}"
 	echo
-	echo -e "${GREEN}Quantas bolas tem o gato do Baltazar?${NOCOLOR}"
+	echo -e "${GREEN} Quantas bolas tem o gato do Baltazar?${NOCOLOR}"
 	read bolas
 
 	if [ "$bolas" == 2 ]
 		then
-		echo -e "${GREEN}Assim, sim! Vamos continuar...${NOCOLOR}"
+		echo -e "${GREEN} Assim, sim! Vamos continuar...${NOCOLOR}"
 		sleep 2
 	elif [ "$bolas" == 3 ]
 		then
-		echo -e "${GREEN}Muito bem, temos pessoa informada...!${NOCOLOR}"
+		echo -e "${GREEN} Muito bem, temos pessoa informada...!${NOCOLOR}"
 		sleep 2
 	elif [ "$bolas" == 0 ]
 		then
-		echo -e "${GREEN}O Isso soa a gata...!${NOCOLOR}"
+		echo -e "${GREEN} Isso soa a gata...!${NOCOLOR}"
 		sleep 2
 		Sair
 	else
-		echo -e "${GREEN}Azar, volta mais tarde!${NOCOLOR}"
+		echo -e "${GREEN} Azar, volta mais tarde!${NOCOLOR}"
 		sleep 3
 		Sair
 	fi
@@ -381,6 +381,7 @@ function Conversas() {
 # No Final fica a evocaçao das funçoes para executar o script
 
 Boas
+Humano
 Menu
 
 #Espero que tenham gostado.
