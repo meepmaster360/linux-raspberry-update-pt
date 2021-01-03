@@ -258,6 +258,7 @@ function Kernel () {
 		else
 		echo "kernel version: $KERNEL_VERSION_CENTOS"
 	fi
+	Menu
 }
 
 
@@ -267,11 +268,13 @@ function Memory () {
 	#MEMORY_USED=
 	echo "Verificando memória do sistema..."
 	echo "Memória livre: $MEMORY_FREE"     
+	Menu
 }
 
 function IP () {
 	IP_SISTEMA=`hostname -I`
 	echo "IP is: $IP_SISTEMA"
+	Menu
 }
 
 function Temperatura () {
@@ -282,6 +285,7 @@ function Temperatura () {
 	TEMP_F=$(($TEMP_C * 9/5 + 32))
 	echo "$TEMP_C C"
 	echo "$TEMP_F F"
+	Menu
 }
 
 function Sair() {
