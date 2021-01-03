@@ -386,6 +386,7 @@ function Conversas() {
 # No Final fica a evocaçao das funçoes para executar o script
 
 Boas
+Humano
 Menu
 
 #Espero que tenham gostado.
