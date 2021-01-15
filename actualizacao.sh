@@ -1,5 +1,5 @@
 #!/bin/bash
-# Autor: meepmaster
+# Author: meepmaster
 # Descrição: Script Automatizado para actualização e limpeza do sistema.
 
 
